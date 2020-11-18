@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    
+
+    <title>Ejercicio Clase 1</title>
+  </head>
+  <body>
+
+    
+    <script>
+      
+      //1. Escribir una función a la que se pasa como parámetro un número entero y devuelve como 
+      //resultado un texto que indica si el número es par o impar. Mostrar por pantalla el resultado devuelto por la función.
+      
+      
+        // input de entrada del valor
+        var numero = prompt("Introduce un número entero");
+        // Esta varible contiene el resultado de la funcion 
+        var resultado = parImpar(numero);
+       
+        // salida por pantalla de resultado alert con un string 
+        alert("El número "+numero+" es "+resultado);
+        
+        // funcion para comparar los numeros
+        function parImpar(numero) {
+       if(numero % 2 == 0) {
+         return "par";
+       }
+    else {
+    return "impar";
+  }
+}        
+     
+// Dudas
+//en la varible esta ejecuatando la funcion ?  
+// no entendi bien el flujo de la funcion ?        
+   
+///////////////////////////////////////////////2do ejercicio ////////////////////////////////////////////////////////////////////////       
+//2. Según este string "abcdefghijklmnñopqrstuvwxyz", hacer una función que recibe un parámetro (un //caracter), y la función me debe devolver en qué posición en la cadena del string se encuentra el //caracter entregado como argumento: 
+        
+var CadenaDeTexto = "abcdefghijklmnñopqrstuvwxyz"; 
+var LetraConsulta = CadenaDeTexto.indexOf("a") ; // El caracter puede ser una varianle en lugar de un caracter string      
+var Resultado =  Posicionletra();       
+        
+    function Posicionletra(){
+    var resultadoPosicionLetra = LetraConsulta
+    return resultadoPosicionLetra ;
+}
+
+     
+  console.log("La La posición  es" + "" + Resultado) ;               
+        
+      
+//3. Hacer una función a la que le paso un precio, y este me devuelva el precio con impuesto de 0.19%. Si yo ingreso 1000 a la función, me //debería retornar con el formato "El precio con impuesto es de 1190"     
+    
+var ValorIngresado = 1000 ;
+var ValorFinal = CalculaImpueto();           
+
+ 
+   
+        
+function CalculaImpueto(){
+  var ResultadaPoecentaje = ValorIngresado*0.19;  
+  var ValorConImpuesto = ResultadaPoecentaje + ValorIngresado;   
+  return ValorConImpuesto; 
+}        
+        
+        
+console.log("El precio con impuesto es de" + " " + ValorFinal);  
+        
+
+
+        
+//4. Hacer un closure con contexto de "una persona tira un dado". Es decir, yo le entrego un nombre, //por ejemplo:
+
+
+        
+        
+    // ejemplo de la clase    
+        
+    function nuevoDado (nombre) { 
+    return function(){ 
+    var resultado = Math.ceil(Math.random() * 6);      
+    return nombre + "tiro un dado y salio" + " " + resultado  
+    }
+    } 
+        
+    var dadojulio = nuevoDado ('Julio') 
+    var dadoAlberto = nuevoDado ('Alberto')
+    
+    dadojulio()
+    dadoAlberto()  
+        
+        
+        
+        
+//Mi ejemplo de Cloisure  
+        
+  function miSuma (numero1) { 
+    return function(){ 
+    var operacion = numero1 + 100;  
+    return "el resultado es " + " " + operacion  
+    }
+    } 
+        
+    var numerosA = miSuma (5)
+    numerosA()
+        
+    </script>
+    
+
+  </body>
+</html>
